@@ -639,10 +639,12 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%; 
+    padding: 20px;
   }
 
   .skills-icons {
-    grid-template-columns: repeat(3, 60px);
+    grid-template-columns: repeat(2, 50px);
   }
 
   .footer-content {
@@ -821,5 +823,19 @@ footer {
     flex-direction: column; /* empilha no mobile */
     align-items: center;
     gap: 2rem; /* espaço menor entre itens */
+  }
+}
+
+@media (max-width: 400px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%; 
+    padding: 10px;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(2, 50px);
   }
 }
