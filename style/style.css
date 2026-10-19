@@ -839,3 +839,53 @@ footer {
     grid-template-columns: repeat(2, 50px);
   }
 }
+/* Alternância de tema e fotos de perfil */
+:root { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+body { background: linear-gradient(145deg,#f8fafc,#e9f3f0); color:#172b2b; transition: background .45s ease,color .45s ease; }
+.navbar { background-color:#fff; border-bottom-color:#cbe9df; }
+.logo-name,.hero-content,.hero-content h1,.hero-content .underscore { color:#172b2b; }
+.nav-links a,.hero-content .intro-text,.hero-content p,.skills-text,.service-card p,.descricao,.ano,.footer-left a,.footer-right a { color:#435b59; }
+.highlight-bar,.services,.projetos,.project-card,footer { background-color:#f0f7f5; color:#172b2b; }
+.service-card,.skills-container { background-color:#fff; border-color:#d8e9e3; }
+.skills-icons img { background-color:#e9f3f0; }
+.highlight h3 { color:#172b2b; }
+.highlight p { color:#435b59; }
+.nav-links.show { background-color:#fff; }
+:root[data-theme="dark"] body { background:linear-gradient(145deg,#1e1e1e,#0d0d0d); color:#fff; }
+:root[data-theme="dark"] .navbar { background-color:#111; border-bottom-color:#00ffcc33; }
+:root[data-theme="dark"] .logo-name,:root[data-theme="dark"] .hero-content,:root[data-theme="dark"] .hero-content h1,:root[data-theme="dark"] .hero-content .underscore { color:#fff; }
+:root[data-theme="dark"] .nav-links a,:root[data-theme="dark"] .hero-content .intro-text,:root[data-theme="dark"] .skills-text,:root[data-theme="dark"] .ano,:root[data-theme="dark"] .footer-left a,:root[data-theme="dark"] .footer-right a { color:#ccc; }
+:root[data-theme="dark"] .hero-content p,:root[data-theme="dark"] .service-card p,:root[data-theme="dark"] .descricao { color:#aaa; }
+:root[data-theme="dark"] .highlight-bar { background-color:#111; color:#fff; }
+:root[data-theme="dark"] .services { background-color:#0a0a0a; color:#fff; }
+:root[data-theme="dark"] .projetos,:root[data-theme="dark"] .project-card { background-color:#0d0d0d; color:#f2f2f2; }
+:root[data-theme="dark"] .service-card,:root[data-theme="dark"] .skills-container { background-color:#111; border-color:#ffffff1a; }
+:root[data-theme="dark"] .skills-icons img { background-color:#222; }
+:root[data-theme="dark"] footer { background-color:#0e0e0e; color:#ccc; }
+:root[data-theme="dark"] .highlight h3 { color:#fff; }
+:root[data-theme="dark"] .highlight p { color:#ccc; }
+:root[data-theme="dark"] .nav-links.show { background-color:#111; }
+.theme-toggle { background:transparent; border:1px solid currentColor; border-radius:50%; width:38px; height:38px; display:grid; place-items:center; color:#087b67; cursor:pointer; font-size:21px; transition:transform .25s ease,background .25s ease; }
+.theme-toggle:hover { transform:rotate(18deg); background:#00ffcc20; }
+:root[data-theme="dark"] .theme-toggle { color:#00ffcc; }
+.navbar-icons { align-items:center; }
+.hero-img { width:350px; height:350px; position:relative; flex-shrink:0; }
+.hero-img .profile-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:20% 50% 30% 50%; border:3px solid #00ffcc; box-shadow:0 0 20px #00ffcc55; transition:opacity .65s ease,transform .65s ease; }
+.profile-photo-light { opacity:1; transform:scale(1); }
+.profile-photo-dark { opacity:0; transform:scale(.97); }
+:root[data-theme="dark"] .profile-photo-light { opacity:0; transform:scale(.97); }
+:root[data-theme="dark"] .profile-photo-dark { opacity:1; transform:scale(1); }
+@media(max-width:600px) { .hero-img { width:180px; height:180px; } }
+@media(prefers-reduced-motion:reduce) { .hero-img .profile-photo { transition:none; } }
+
+/* Language selector */
+.language-toggle {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 7px 10px; border: 1px solid currentColor; border-radius: 20px;
+  background: transparent; color: #087b67; cursor: pointer;
+  font: 600 13px/1 inherit; transition: background .25s ease, transform .25s ease;
+}
+.language-toggle ion-icon { font-size: 19px; }
+.language-toggle:hover { background: #00ffcc20; transform: translateY(-2px); }
+:root[data-theme="dark"] .language-toggle { color: #00ffcc; }

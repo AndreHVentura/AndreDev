@@ -7,6 +7,7 @@
     <meta name="author" content="André Ventura" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style/style.css" />
+    <script>try { if (localStorage.getItem("portfolio-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch(e) {}</script>
     <title>Portfólio - André Ventura</title>
   </head>
   <body>
@@ -23,6 +24,12 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
       <div class="navbar-icons">
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English" title="Switch language">
+          <ion-icon name="language-outline" aria-hidden="true"></ion-icon><span id="languageLabel">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false" title="Alternar tema">
+          <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
+        </button>
         <a href="https://github.com/AndreHVentura" target="_blank">
           <i class="fab fa-github"></i>
         </a>
@@ -37,7 +44,8 @@
     <!-- Cabeçalho -->
     <header class="hero">
       <div class="hero-img">
-        <img src="img/perfil.jpeg" alt="Foto de Perfil" loading="lazy"/>
+        <img class="profile-photo profile-photo-light" src="img/foto_perfil1.jpeg" alt="Foto de André Ventura no tema claro" fetchpriority="high" />
+        <img class="profile-photo profile-photo-dark" src="img/foto_perfil2.jpeg" alt="" aria-hidden="true" />
       </div>
       <div class="hero-content">
         <span class="intro-text">Hello World! eu sou</span>
@@ -342,5 +350,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/language.js"></script>
   </body>
 </html>

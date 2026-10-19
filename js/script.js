@@ -77,3 +77,19 @@ menuBtn.addEventListener("click", () => {
     ? '<ion-icon name="close-outline"></ion-icon>'
     : '<ion-icon name="menu-outline"></ion-icon>';
 });
+
+// Tema e transição entre as fotos de perfil
+const themeToggle = document.getElementById('themeToggle');
+function updateThemeButton() {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.setAttribute('aria-label', dark ? 'Ativar tema claro' : 'Ativar tema escuro');
+  themeToggle.innerHTML = `<ion-icon name="${dark ? 'sunny-outline' : 'moon-outline'}" aria-hidden="true"></ion-icon>`;
+}
+updateThemeButton();
+themeToggle.addEventListener('click', () => {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('portfolio-theme', dark ? 'light' : 'dark'); } catch(e) {}
+  updateThemeButton();
+});
