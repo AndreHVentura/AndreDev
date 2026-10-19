@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de André Ventura — Analista de Requisitos e profissional de desenvolvimento de software, com experiência em processos, documentação, testes e aplicações web."
+    />
+    <meta name="author" content="André Ventura" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <style>
+      /* Ícones Lucide e tags de habilidades */
+      [data-lucide] { width: 1.25rem; height: 1.25rem; stroke-width: 1.8; vertical-align: middle; }
+      .navbar-icons [data-lucide], .menu-icon [data-lucide] { width: 1.2rem; height: 1.2rem; }
+      .service-card > [data-lucide] { width: 2rem; height: 2rem; margin-bottom: .5rem; }
+      .highlight > [data-lucide] { width: 1.65rem; height: 1.65rem; }
+      .skills-icons { display: flex; flex-wrap: wrap; gap: .8rem; align-content: flex-start; }
+      .skills-group { display: flex; flex-wrap: wrap; gap: .5rem; flex: 1 1 100%; }
+      .skills-group-title { flex: 1 1 100%; }
+      .skill-tag { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem .75rem; border: 1px solid var(--border-color, rgba(128,128,128,.35)); border-radius: 999px; font-size: .9rem; line-height: 1.2; }
+      .skill-tag [data-lucide] { width: 1rem; height: 1rem; }
+      .skills-group-title { margin: 1rem 0 .5rem; font-size: 1rem; }
+      .skills-group:first-child .skills-group-title { margin-top: 0; }
+    </style>
+    <script>
+      try {
+        if (localStorage.getItem("portfolio-theme") === "dark")
+          document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
+    <title>Portfólio - André Ventura</title>
+  </head>
+  <body>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-name">André.Dev</span>
+      </div>
+      <ul class="nav-links" id="nav-Links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="navbar-icons">
+        <button
+          class="language-toggle"
+          id="languageToggle"
+          type="button"
+          aria-label="Switch to English"
+          title="Switch language"
+        >
+          <ion-icon name="language-outline" aria-hidden="true"></ion-icon
+          ><span id="languageLabel">EN</span>
+        </button>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Ativar tema escuro"
+          aria-pressed="false"
+          title="Alternar tema"
+        >
+          <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <a href="https://github.com/AndreHVentura" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/andrehventura" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="menu-icon" id="menuBtn">
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </div>
+    </nav>
+    <!-- Cabeçalho -->
+    <header class="hero">
+      <div class="hero-img">
+        <img
+          class="profile-photo profile-photo-light"
+          src="img/foto_perfil1.jpeg"
+          alt="Foto de André Ventura no tema claro"
+          fetchpriority="high"
+        />
+        <img
+          class="profile-photo profile-photo-dark"
+          src="img/foto_perfil2.jpeg"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+      <div class="hero-content">
+        <span class="intro-text">Hello World! Eu sou</span>
+        <h1>
+          André Ventura
+          <br />
+          <span class="highlight">
+            {Analista de Requisitos &
+            <span class="no-break"
+              >Desenvolvimento<span class="underscore">_</span>}</span
+            >
+          </span>
+        </h1>
+        <p>
+          Sou Analista de Requisitos e estudante de Desenvolvimento de Software
+          Multiplataforma na FATEC Jacareí. Atuo no levantamento e documentação
+          de requisitos, mapeamento de processos, organização de backlogs e testes
+          de qualidade. Também tenho experiência prática com desenvolvimento web,
+          integração de APIs, bancos de dados e suporte técnico, conectando as
+          necessidades do negócio a soluções tecnológicas funcionais.
+        </p>
+        <div class="hero-icons">
+          <a href="https://github.com/AndreHVentura" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/andrehventura" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:andrehventura21@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Destaque -->
+    <section class="highlight-bar">
+      <div class="highlight">
+        <i data-lucide="calendar-days" aria-hidden="true"></i>
+        <h3>4</h3>
+        <p>Anos de experiência</p>
+      </div>
+      <div class="highlight">
+        <i data-lucide="laptop" aria-hidden="true"></i>
+        <h3>6</h3>
+        <p>Projetos desenvolvidos</p>
+      </div>
+      <div class="highlight">
+        <i data-lucide="code-2" aria-hidden="true"></i>
+        <h3>6</h3>
+        <p>Linguagens de programação</p>
+      </div>
+    </section>
+    <!-- sessão sobre -->
+    <main>
+      <section class="services" id="sobre">
+        <h2><span class="green-dot">•</span> Sobre</h2>
+        <h2>
+          <span class="highlighted">Análise, tecnologia e qualidade</span>
+          em projetos profissionais e acadêmicos
+        </h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i data-lucide="code-2" aria-hidden="true"></i>
+            <h3>Desenvolvimento web e mobile</h3>
+            <p>
+              Criação e modernização de sites e interfaces responsivas, com atenção
+              à usabilidade, organização visual, desempenho e experiência do usuário.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="database" aria-hidden="true"></i>
+            <h3>Banco de dados e integração de sistemas</h3>
+            <p>
+              Experiência acadêmica e prática com bancos relacionais e NoSQL,
+              consultas, estruturação de dados e integração com aplicações.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="workflow" aria-hidden="true"></i>
+            <h3>Controle de versão</h3>
+            <p>
+              Utilização de sistemas de controle de versão como Git e
+              plataformas como GitHub para colaboração e gerenciamento de
+              código.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <h3>Organização de projetos e metodologias ágeis</h3>
+            <p>
+              Organização de demandas, priorização de atividades e acompanhamento
+              de entregas. Vivência com Scrum e Kanban em equipes e projetos.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="clipboard-list" aria-hidden="true"></i>
+            <h3>Levantamento de requisitos</h3>
+            <p>
+              Condução de reuniões, levantamento e documentação de requisitos,
+              mapeamento de processos e organização de backlogs alinhados às
+              necessidades dos clientes e aos objetivos do negócio.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="brain-circuit" aria-hidden="true"></i>
+            <h3>Inteligência Artificial e PLN</h3>
+            <p>
+              Desenvolvimento de aplicações com recursos de inteligência artificial,
+              modelos de linguagem e processamento de linguagem natural (PLN),
+              incluindo fluxos conversacionais para chatbots e assistentes.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="container" aria-hidden="true"></i>
+            <h3>Conteinerização</h3>
+            <p>
+              Uso de Docker e contêineres para padronizar ambientes de execução,
+              organizar dependências e facilitar a configuração e execução de aplicações.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="git-branch" aria-hidden="true"></i>
+            <h3>CI/CD e automação</h3>
+            <p>
+              Conceitos de integração e entrega contínuas, automação de etapas do fluxo
+              de desenvolvimento e organização de pipelines para apoiar testes e entregas.
+            </p>
+          </div>
+          <div class="service-card">
+            <i data-lucide="workflow" aria-hidden="true"></i>
+            <h3>APIs e integração de sistemas</h3>
+            <p>
+              Integração de sistemas com APIs e serviços externos para ampliar
+              funcionalidades e conectar aplicações a dados e serviços.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- fim sessão sobre -->
+      <!-- sessão projetos -->
+      <section class="projetos" id="projetos">
+        <h2><span class="green-dot">•</span> Projetos</h2>
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="project-card">
+              <div class="project-left">
+                <div class="main-image-container">
+                  <img
+                    src="img/webwizard_logo.jpeg"
+                    alt="Projeto webWizard"
+                    class="main-image active"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnails">
+                  <img
+                    src="img/webwizard_logo.jpeg"
+                    alt="Thumb 1"
+                    class="thumb active"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/webwiz1.jpeg"
+                    alt="Thumb 2"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/webwiz2.jpeg"
+                    alt="Thumb 3"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/webwiz3.jpeg"
+                    alt="Thumb 4"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="project-right">
+                <h3 class="project-title">Web Wizards pro</h3>
+                <p class="project-subtitle">informações do projeto</p>
+                <p class="project-desc">
+                  Plataforma de curso focado em ensinar Metodologias ágeis ao
+                  usuário, tendo como principal foco o Scrum.
+                </p>
+                <div class="info-list">
+                  <div class="info-row">
+                    <span class="label">Cliente:</span>
+                    <span class="value">Projeto acadêmico</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Duração do projeto:</span>
+                    <span class="value">6 meses</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Tecnologias:</span>
+                    <span class="value">HTML, CSS, JavaScript</span>
+                  </div>
+                </div>
+                <div class="links">
+                  <a
+                    href="https://github.com/cGuilhermec/WebWizardsPro"
+                    target="_blank"
+                    >Ver no GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="project-card">
+              <div class="project-left">
+                <div class="main-image-container">
+                  <img
+                    src="img/nutritech_logo.jpeg"
+                    alt="Projeto NutriTech"
+                    class="main-image active"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnails">
+                  <img
+                    src="img/nutritech_logo.jpeg"
+                    alt="Thumb 1"
+                    class="thumb active"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/nutri1.jpeg"
+                    alt="Thumb 2"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/nutri2.jpeg"
+                    alt="Thumb 3"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="project-right">
+                <h3 class="project-title">NutriTech</h3>
+                <p class="project-subtitle">informações do projeto</p>
+                <p class="project-desc">
+                  Plataforma de controle nutricional e acompanhamento de dieta,
+                  e visualização de progresso físico.
+                </p>
+                <div class="info-list">
+                  <div class="info-row">
+                    <span class="label">Cliente:</span>
+                    <span class="value">Projeto acadêmico</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Duração do projeto:</span>
+                    <span class="value">6 meses</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Tecnologias:</span>
+                    <span class="value"
+                      >React, TypeScript, SQL, PostgreSQL</span
+                    >
+                  </div>
+                </div>
+                <div class="links">
+                  <a
+                    href="https://github.com/andremc331/NutriTech"
+                    target="_blank"
+                    >Ver no GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="project-card">
+              <div class="project-left">
+                <div class="main-image-container">
+                  <img
+                    src="img/cloud_logo.jpeg"
+                    alt="Projeto CloudIo"
+                    class="main-image active"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnails">
+                  <img
+                    src="img/cloud_logo.jpeg"
+                    alt="Thumb 1"
+                    class="thumb active"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/cloud1.jpeg"
+                    alt="Thumb 2"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/cloud2.jpeg"
+                    alt="Thumb 3"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                  <img
+                    src="img/cloud3.jpeg"
+                    alt="Thumb 4"
+                    class="thumb"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="project-right">
+                <h3 class="project-title">Cloud.Io</h3>
+                <p class="project-subtitle">informações do projeto</p>
+                <p class="project-desc">
+                  Plataforma de levantamento e monitoramento climático, dos
+                  ventos e altura das ondas na região do lado de Furnas.
+                </p>
+                <div class="info-list">
+                  <div class="info-row">
+                    <span class="label">Cliente:</span>
+                    <span class="value"
+                      >CNPq - Universidade Federal de Itajubá</span
+                    >
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Duração do projeto:</span>
+                    <span class="value">6 meses</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Tecnologias:</span>
+                    <span class="value">React, TypeScript, MongoDB, API.</span>
+                  </div>
+                </div>
+                <div class="links">
+                  <a
+                    href="https://github.com/AndreHVentura/Cloud.io"
+                    target="_blank"
+                    >Ver no GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button id="prev">&#10094;</button>
+          <button id="next">&#10095;</button>
+        </div>
+      </section>
+      <!-- fim sessão projetos -->
+      <!-- sessão habilidades -->
+      <section class="habilidades" id="habilidades">
+        <h2><span class="green-dot">•</span> Habilidades</h2>
+        <div class="skills-container">
+          <div class="skills-icons" aria-label="Principais tecnologias e competências">
+            <div class="skills-group">
+              <h3 class="skills-group-title">Análise e qualidade</h3>
+              <span class="skill-tag"><i data-lucide="clipboard-list"></i> Requisitos</span>
+              <span class="skill-tag"><i data-lucide="workflow"></i> Mapeamento de processos</span>
+              <span class="skill-tag"><i data-lucide="list-checks"></i> Backlog e histórias de usuário</span>
+              <span class="skill-tag"><i data-lucide="test-tube-2"></i> Testes funcionais</span>
+              <span class="skill-tag"><i data-lucide="file-check-2"></i> Documentação</span>
+            </div>
+            <div class="skills-group">
+              <h3 class="skills-group-title">Desenvolvimento</h3>
+              <span class="skill-tag"><i data-lucide="code-2"></i> HTML</span>
+              <span class="skill-tag"><i data-lucide="palette"></i> CSS</span>
+              <span class="skill-tag"><i data-lucide="file-code"></i> JavaScript</span>
+              <span class="skill-tag"><i data-lucide="atom"></i> React</span>
+              <span class="skill-tag"><i data-lucide="file-code-2"></i> TypeScript</span>
+              <span class="skill-tag"><i data-lucide="server"></i> Node.js</span>
+              <span class="skill-tag"><i data-lucide="code"></i> PHP</span>
+              <span class="skill-tag"><i data-lucide="terminal"></i> Python</span>
+            </div>
+            <div class="skills-group">
+              <h3 class="skills-group-title">Dados e integração</h3>
+              <span class="skill-tag"><i data-lucide="database"></i> MySQL</span>
+              <span class="skill-tag"><i data-lucide="database"></i> PostgreSQL</span>
+              <span class="skill-tag"><i data-lucide="database"></i> MongoDB</span>
+              <span class="skill-tag"><i data-lucide="plug"></i> APIs REST</span>
+            </div>
+            <div class="skills-group">
+              <h3 class="skills-group-title">IA e DevOps</h3>
+              <span class="skill-tag"><i data-lucide="brain-circuit"></i> Inteligência Artificial</span>
+              <span class="skill-tag"><i data-lucide="messages-square"></i> Chatbots</span>
+              <span class="skill-tag"><i data-lucide="languages"></i> PLN</span>
+              <span class="skill-tag"><i data-lucide="container"></i> Docker</span>
+              <span class="skill-tag"><i data-lucide="git-branch"></i> CI/CD</span>
+              <span class="skill-tag"><i data-lucide="workflow"></i> GitHub Actions</span>
+            </div>
+            <div class="skills-group">
+              <h3 class="skills-group-title">Ferramentas e métodos</h3>
+              <span class="skill-tag"><i data-lucide="git-commit"></i> Git</span>
+              <span class="skill-tag"><i data-lucide="github"></i> GitHub</span>
+              <span class="skill-tag"><i data-lucide="kanban"></i> Scrum</span>
+              <span class="skill-tag"><i data-lucide="columns-3"></i> Kanban</span>
+              <span class="skill-tag"><i data-lucide="pen-tool"></i> Figma</span>
+              <span class="skill-tag"><i data-lucide="monitor-cog"></i> Suporte técnico</span>
+            </div>
+          </div>
+          <div class="skills-text">
+            <p>
+              <strong>Análise de Negócios e Requisitos:</strong> levantamento e
+              documentação de requisitos, reuniões com stakeholders, mapeamento
+              de processos, histórias de usuário e organização de backlog.
+            </p>
+            <p>
+              <strong>Qualidade e Testes:</strong> testes funcionais, validação
+              de requisitos, registro de resultados e identificação de problemas.
+            </p>
+            <p>
+              <strong>Desenvolvimento Front-End:</strong> HTML, CSS, JavaScript,
+              React, TypeScript, Bootstrap e Tailwind CSS.
+            </p>
+            <p>
+              <strong>Back-End e APIs:</strong> Node.js, PHP, Python e integração
+              com APIs REST.
+            </p>
+            <p>
+              <strong>Bancos de Dados:</strong> MySQL, PostgreSQL e MongoDB.
+            </p>
+            <p>
+              <strong>IA e PLN:</strong> integração de modelos de linguagem (LLMs),
+              desenvolvimento de fluxos conversacionais e aplicações de chatbot com
+              processamento de linguagem natural.
+            </p>
+            <p>
+              <strong>DevOps, CI/CD e Conteinerização:</strong> Docker, conceitos de
+              pipelines de integração e entrega contínuas, automação de etapas e GitHub Actions.
+            </p>
+            <p>
+              <strong>Ferramentas e Métodos:</strong> Git, GitHub, Trello, Figma,
+              UML, Scrum e Kanban.
+            </p>
+            <p>
+              <strong>Suporte e Infraestrutura:</strong> diagnóstico de problemas
+              de software e hardware, suporte a usuários e configuração básica
+              de equipamentos e infraestrutura.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- fim da sessão habilidades -->
+    <!-- rodapé -->
+    <footer id="contato">
+      <h2><span class="green-dot">•</span> Contato</h2>
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="mailto:andrehventura21@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i> andrehventura21@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/andrehventura" target="_blank">
+            <i class="fab fa-linkedin"></i> /in/andrehventura
+          </a>
+          <a href="https://github.com/AndreHVentura" target="_blank">
+            <i class="fab fa-github"></i> /AndreHVentura
+          </a>
+        </div>
+        <div class="footer-right">
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <button id="scrollToTop" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </footer>
+    <!-- fim do site -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.lucide) window.lucide.createIcons();
+      });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/language.js"></script>
+  </body>
+</html>
