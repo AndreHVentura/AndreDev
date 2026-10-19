@@ -136,17 +136,26 @@ body {
   font-family: "Courier New", monospace;
 }
 
-.hero-content .highlight {
+.highlight {
   color: #00ffcc;
 }
 
-.hero-content .underscore {
-  color: white;
-  animation: blink 1s step-start infinite;
+.no-break {
+  white-space: nowrap;
+}
+
+.underscore {
+  display: inline;
+  color: #00ffcc;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-  50% {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
     opacity: 0;
   }
 }
