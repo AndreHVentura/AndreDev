@@ -1,117 +1,113 @@
 <!doctype html>
+
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
-      name="description"
       content="Portfólio de André Ventura — Analista de Requisitos e profissional de desenvolvimento de software, com experiência em processos, documentação, testes e aplicações web."
+      name="description"
     />
-    <meta name="author" content="André Ventura" />
+    <meta content="André Ventura" name="author" />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="style/style.css" />
-    <style>
-      /* Ícones Lucide e tags de habilidades */
-      [data-lucide] { width: 1.25rem; height: 1.25rem; stroke-width: 1.8; vertical-align: middle; }
-      .navbar-icons [data-lucide], .menu-icon [data-lucide] { width: 1.2rem; height: 1.2rem; }
-      .service-card > [data-lucide] { width: 2rem; height: 2rem; margin-bottom: .5rem; }
-      .highlight > [data-lucide] { width: 1.65rem; height: 1.65rem; }
-      .skills-icons { display: flex; flex-wrap: wrap; gap: .8rem; align-content: flex-start; }
-      .skills-group { display: flex; flex-wrap: wrap; gap: .5rem; flex: 1 1 100%; }
-      .skills-group-title { flex: 1 1 100%; }
-      .skill-tag { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem .75rem; border: 1px solid var(--border-color, rgba(128,128,128,.35)); border-radius: 999px; font-size: .9rem; line-height: 1.2; }
-      .skill-tag [data-lucide] { width: 1rem; height: 1rem; }
-      .skills-group-title { margin: 1rem 0 .5rem; font-size: 1rem; }
-      .skills-group:first-child .skills-group-title { margin-top: 0; }
-    </style>
+    <link href="style/style.css" rel="stylesheet" />
+    <title>Portfólio - André Ventura</title>
     <script>
       try {
-        if (localStorage.getItem("portfolio-theme") === "dark")
-          document.documentElement.dataset.theme = "dark";
-      } catch (e) {}
+        document.documentElement.dataset.theme =
+          localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
     </script>
-    <title>Portfólio - André Ventura</title>
   </head>
   <body>
     <!-- Barra de navegação -->
     <nav class="navbar">
       <div class="navbar-left">
-        <span class="logo-symbol">&lt;/&gt;</span>
-        <span class="logo-name">André.Dev</span>
+        <i data-lucide="code-xml"></i>
+        <span class="logo-name">Andre.Dev</span>
       </div>
-      <ul class="nav-links" id="nav-Links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
       <div class="navbar-icons">
+        <div class="nav-dropdown">
+          <button
+            aria-controls="nav-Links"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+            class="icon-button menu-toggle"
+            id="menuBtn"
+            type="button"
+          >
+            <i data-lucide="menu"></i><span>Menu</span
+            ><i class="chevron" data-lucide="chevron-down"></i>
+          </button>
+          <ul class="nav-links" hidden="" id="nav-Links">
+            <li><a href="#sobre">Experiência e competências</a></li>
+            <li><a href="#projetos_trabalhos">Projetos profissionais</a></li>
+            <li><a href="#projetos">Projetos acadêmicos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
         <button
-          class="language-toggle"
-          id="languageToggle"
-          type="button"
           aria-label="Switch to English"
+          class="language-toggle icon-button"
+          id="languageToggle"
           title="Switch language"
+          type="button"
         >
-          <ion-icon name="language-outline" aria-hidden="true"></ion-icon
-          ><span id="languageLabel">EN</span>
+          <i data-lucide="languages"></i>
+          <span id="languageLabel">EN</span>
         </button>
         <button
-          class="theme-toggle"
-          id="themeToggle"
-          type="button"
           aria-label="Ativar tema escuro"
           aria-pressed="false"
+          class="theme-toggle icon-button"
+          id="themeToggle"
           title="Alternar tema"
+          type="button"
         >
-          <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
+          <i aria-hidden="true" data-lucide="moon"></i>
         </button>
-        <a href="https://github.com/AndreHVentura" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/andrehventura" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
-      <div class="menu-icon" id="menuBtn">
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </div>
     </nav>
     <!-- Cabeçalho -->
     <header class="hero">
       <div class="hero-img">
         <img
-          class="profile-photo profile-photo-light"
-          src="img/foto_perfil1.jpeg"
           alt="Foto de André Ventura no tema claro"
+          class="profile-photo profile-photo-light"
           fetchpriority="high"
+          src="img/foto_perfil1.jpeg"
         />
         <img
-          class="profile-photo profile-photo-dark"
-          src="img/foto_perfil2.jpeg"
           alt=""
           aria-hidden="true"
+          class="profile-photo profile-photo-dark"
+          src="img/foto_perfil2.jpeg"
         />
       </div>
       <div class="hero-content">
         <span class="intro-text">Hello World! Eu sou</span>
-        <h1>
+        <h1 class="hero-title">
           André Ventura
           <br />
-          <span class="highlight" text-align="left">
-            {Analista de Requisitos &
+          <span class="highlight">
+            {Desenvolvedor Web &amp;
             <span class="no-break"
-              >Desenvolvimento<span class="underscore">_</span>}</span
+              >Mobile<span class="underscore">_</span>}</span
             >
           </span>
         </h1>
-        <p text-align="justify">
-          Sou Analista de Requisitos e estudante de Desenvolvimento de Software Multiplataforma. 
-          Atuo no levantamento e documentação de requisitos, mapeamento de processos, organização de backlogs e testes de qualidade. 
-          Também tenho experiência prática com desenvolvimento web, integração de APIs, bancos de dados e suporte técnico, conectando as
+        <p>
+          Sou Analista de Requisitos e estudante de Desenvolvimento de Software
+          Multiplataforma. Atuo no levantamento e documentação de requisitos,
+          mapeamento de processos, organização de backlogs e testes de
+          qualidade. Também tenho experiência prática com desenvolvimento web,
+          integração de APIs, bancos de dados e suporte técnico, conectando as
           necessidades do negócio a soluções tecnológicas funcionais.
         </p>
       </div>
@@ -119,17 +115,17 @@
     <!-- Destaque -->
     <section class="highlight-bar">
       <div class="highlight">
-        <i data-lucide="calendar-days" aria-hidden="true"></i>
+        <i aria-hidden="true" data-lucide="calendar-days"></i>
         <h3>4</h3>
         <p>Anos de experiência</p>
       </div>
       <div class="highlight">
-        <i data-lucide="laptop" aria-hidden="true"></i>
+        <i aria-hidden="true" data-lucide="laptop"></i>
         <h3>6</h3>
         <p>Projetos desenvolvidos</p>
       </div>
       <div class="highlight">
-        <i data-lucide="code-2" aria-hidden="true"></i>
+        <i aria-hidden="true" data-lucide="code-xml"></i>
         <h3>6</h3>
         <p>Linguagens de programação</p>
       </div>
@@ -144,15 +140,16 @@
         </h2>
         <div class="services-grid">
           <div class="service-card">
-            <i data-lucide="code-2" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="code-xml"></i>
             <h3>Desenvolvimento web e mobile</h3>
             <p>
-              Criação e modernização de sites e interfaces responsivas, com atenção
-              à usabilidade, organização visual, desempenho e experiência do usuário.
+              Criação e modernização de sites e interfaces responsivas, com
+              atenção à usabilidade, organização visual, desempenho e
+              experiência do usuário.
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="database" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="database"></i>
             <h3>Banco de dados e integração de sistemas</h3>
             <p>
               Experiência acadêmica e prática com bancos relacionais e NoSQL,
@@ -160,7 +157,7 @@
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="workflow" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="workflow"></i>
             <h3>Controle de versão</h3>
             <p>
               Utilização de sistemas de controle de versão como Git e
@@ -169,15 +166,16 @@
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="refresh-cw"></i>
             <h3>Organização de projetos e metodologias ágeis</h3>
             <p>
-              Organização de demandas, priorização de atividades e acompanhamento
-              de entregas. Vivência com Scrum e Kanban em equipes e projetos.
+              Organização de demandas, priorização de atividades e
+              acompanhamento de entregas. Vivência com Scrum e Kanban em equipes
+              e projetos.
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="clipboard-list" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="clipboard-list"></i>
             <h3>Levantamento de requisitos</h3>
             <p>
               Condução de reuniões, levantamento e documentação de requisitos,
@@ -186,32 +184,35 @@
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="brain-circuit" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="brain-circuit"></i>
             <h3>Inteligência Artificial e PLN</h3>
             <p>
-              Desenvolvimento de aplicações com recursos de inteligência artificial,
-              modelos de linguagem e processamento de linguagem natural (PLN),
-              incluindo fluxos conversacionais para chatbots e assistentes.
+              Desenvolvimento de aplicações com recursos de inteligência
+              artificial, modelos de linguagem e processamento de linguagem
+              natural (PLN), incluindo fluxos conversacionais para chatbots e
+              assistentes.
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="container" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="container"></i>
             <h3>Conteinerização</h3>
             <p>
               Uso de Docker e contêineres para padronizar ambientes de execução,
-              organizar dependências e facilitar a configuração e execução de aplicações.
+              organizar dependências e facilitar a configuração e execução de
+              aplicações.
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="git-branch" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="git-branch"></i>
             <h3>CI/CD e automação</h3>
             <p>
-              Conceitos de integração e entrega contínuas, automação de etapas do fluxo
-              de desenvolvimento e organização de pipelines para apoiar testes e entregas.
+              Conceitos de integração e entrega contínuas, automação de etapas
+              do fluxo de desenvolvimento e organização de pipelines para apoiar
+              testes e entregas.
             </p>
           </div>
           <div class="service-card">
-            <i data-lucide="workflow" aria-hidden="true"></i>
+            <i aria-hidden="true" data-lucide="workflow"></i>
             <h3>APIs e integração de sistemas</h3>
             <p>
               Integração de sistemas com APIs e serviços externos para ampliar
@@ -222,67 +223,154 @@
       </section>
       <!-- fim sessão sobre -->
       <!-- sessão projetos -->
-      <section class="projetos" id="projetos_trabalhos">
-        <h2><span class="green-dot">•</span> Projetos profissionais</h2>
-        <div class="carousel">
+      <section class="projects-section" id="projetos_trabalhos">
+        <h2 class="section-title">
+          <span class="green-dot">•</span> Projetos profissionais
+        </h2>
+        <div class="carousel-toolbar">
+          <button
+            aria-label="Projeto anterior"
+            class="carousel-prev"
+            type="button"
+          >
+            <i data-lucide="chevron-left"></i></button
+          ><span aria-live="polite" class="carousel-count">1 / 1</span>
+          <div class="carousel-progress"><span></span></div>
+          <button
+            aria-label="Próximo projeto"
+            class="carousel-next"
+            type="button"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+        <p class="section-subtitle">
+          Soluções desenvolvidas para clientes, com foco em resultado, qualidade
+          e boas práticas.
+        </p>
+        <div class="project-carousel">
           <div class="carousel-item active">
             <div class="project-card">
               <div class="project-left">
                 <div class="main-image-container">
                   <img
-                    src="img/webwizard_logo.jpeg"
-                    alt="Projeto webWizard"
+                    alt="Imagem do projeto CRM"
                     class="main-image active"
                     loading="lazy"
+                    src="img/webwizard_logo.jpeg"
                   />
                 </div>
                 <div class="thumbnails">
                   <img
-                    src="img/webwizard_logo.jpeg"
                     alt="Thumb 1"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb active"
                     loading="lazy"
+                    role="button"
+                    src="img/webwizard_logo.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz1.jpeg"
                     alt="Thumb 2"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz1.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz2.jpeg"
                     alt="Thumb 3"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz2.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz3.jpeg"
                     alt="Thumb 4"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz3.jpeg"
+                    tabindex="0"
                   />
                 </div>
               </div>
               <div class="project-right">
                 <h3 class="project-title">CRM</h3>
-                <p class="project-subtitle">informações do projeto</p>
-                <p class="project-desc">
-                  Plataforma de curso focado em ensinar Metodologias ágeis ao
-                  usuário, tendo como principal foco o Scrum.
-                </p>
-                <div class="info-list">
-                  <div class="info-row">
-                    <span class="label">Cliente:</span>
+                <p class="project-type">Plataforma Web</p>
+                <div class="description-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="file-text"></i>Descrição
+                    do projeto
+                  </h4>
+                  <p class="project-desc">
+                    Plataforma de curso focado em ensinar Metodologias ágeis ao
+                    usuário, tendo como principal foco o Scrum.
+                  </p>
+                </div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="user-round"></i>
+                    <span class="label">Cliente</span>
                     <span class="value">Aussel</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Duração do projeto:</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="calendar-days"></i>
+                    <span class="label">Duração do projeto</span>
                     <span class="value">4 meses</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Tecnologias:</span>
-                    <span class="value">HTML, CSS, JavaScript</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="briefcase-business"></i
+                    ><span class="label">Cargo</span
+                    ><span class="value" data-pending="true">A informar</span>
                   </div>
+                </div>
+                <div class="stack-grid">
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="monitor"></i>Front-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">HTML</span
+                      ><span class="tech-tag">CSS</span
+                      ><span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="server"></i>Back-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="cloud"></i
+                      >Infraestrutura
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="responsibilities-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="list-checks"></i
+                    >Atividades e responsabilidades
+                  </h4>
+                  <p>
+                    Levantamento de requisitos, organização das entregas,
+                    documentação e acompanhamento da qualidade.
+                  </p>
                 </div>
               </div>
             </div>
@@ -292,125 +380,255 @@
               <div class="project-left">
                 <div class="main-image-container">
                   <img
-                    src="img/nutritech_logo.jpeg"
-                    alt="Projeto NutriTech"
+                    alt="Imagem do projeto Portal empresarial versão 2.0"
                     class="main-image active"
                     loading="lazy"
+                    src="img/nutritech_logo.jpeg"
                   />
                 </div>
                 <div class="thumbnails">
                   <img
-                    src="img/nutritech_logo.jpeg"
                     alt="Thumb 1"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb active"
                     loading="lazy"
+                    role="button"
+                    src="img/nutritech_logo.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/nutri1.jpeg"
                     alt="Thumb 2"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/nutri1.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/nutri2.jpeg"
                     alt="Thumb 3"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/nutri2.jpeg"
+                    tabindex="0"
                   />
                 </div>
               </div>
               <div class="project-right">
                 <h3 class="project-title">Portal empresarial versão 2.0</h3>
-                <p class="project-subtitle">informações do projeto</p>
-                <p class="project-desc">
-                  Plataforma de controle nutricional e acompanhamento de dieta,
-                  e visualização de progresso físico.
-                </p>
-                <div class="info-list">
-                  <div class="info-row">
-                    <span class="label">Cliente:</span>
+                <p class="project-type">Aplicação Web</p>
+                <div class="description-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="file-text"></i>Descrição
+                    do projeto
+                  </h4>
+                  <p class="project-desc">
+                    Plataforma de controle nutricional e acompanhamento de
+                    dieta, e visualização de progresso físico.
+                  </p>
+                </div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="user-round"></i>
+                    <span class="label">Cliente</span>
                     <span class="value">Aussel</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Duração do projeto:</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="calendar-days"></i>
+                    <span class="label">Duração do projeto</span>
                     <span class="value">6 meses</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Tecnologias:</span>
-                    <span class="value"
-                      >React, TypeScript, SQL, PostgreSQL</span
-                    >
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="briefcase-business"></i
+                    ><span class="label">Cargo</span
+                    ><span class="value" data-pending="true">A informar</span>
                   </div>
+                </div>
+                <div class="stack-grid">
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="monitor"></i>Front-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">React</span
+                      ><span class="tech-tag">TypeScript</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="server"></i>Back-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">SQL</span
+                      ><span class="tech-tag">PostgreSQL</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="cloud"></i
+                      >Infraestrutura
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="responsibilities-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="list-checks"></i
+                    >Atividades e responsabilidades
+                  </h4>
+                  <p>
+                    Levantamento de requisitos, organização das entregas,
+                    documentação e acompanhamento da qualidade.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-controls">
-          <button id="prev">&#10094;</button>
-          <button id="next">&#10095;</button>
-        </div>
       </section>
-      <section class="projetos" id="projetos">
-        <h2><span class="green-dot">•</span> Projetos acadêmicos</h2>
-        <div class="carousel">
+      <section class="projects-section" id="projetos">
+        <h2 class="section-title">
+          <span class="green-dot">•</span> Projetos acadêmicos
+        </h2>
+        <div class="carousel-toolbar">
+          <button
+            aria-label="Projeto anterior"
+            class="carousel-prev"
+            type="button"
+          >
+            <i data-lucide="chevron-left"></i></button
+          ><span aria-live="polite" class="carousel-count">1 / 1</span>
+          <div class="carousel-progress"><span></span></div>
+          <button
+            aria-label="Próximo projeto"
+            class="carousel-next"
+            type="button"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+        <p class="section-subtitle">
+          Projetos de aprendizagem que unem tecnologia, pesquisa e experiências
+          práticas.
+        </p>
+        <div class="project-carousel">
           <div class="carousel-item active">
             <div class="project-card">
               <div class="project-left">
                 <div class="main-image-container">
                   <img
-                    src="img/webwizard_logo.jpeg"
-                    alt="Projeto webWizard"
+                    alt="Imagem do projeto Web Wizards pro"
                     class="main-image active"
                     loading="lazy"
+                    src="img/webwizard_logo.jpeg"
                   />
                 </div>
                 <div class="thumbnails">
                   <img
-                    src="img/webwizard_logo.jpeg"
                     alt="Thumb 1"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb active"
                     loading="lazy"
+                    role="button"
+                    src="img/webwizard_logo.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz1.jpeg"
                     alt="Thumb 2"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz1.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz2.jpeg"
                     alt="Thumb 3"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz2.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/webwiz3.jpeg"
                     alt="Thumb 4"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/webwiz3.jpeg"
+                    tabindex="0"
                   />
                 </div>
               </div>
               <div class="project-right">
                 <h3 class="project-title">Web Wizards pro</h3>
-                <p class="project-subtitle">informações do projeto</p>
-                <p class="project-desc">
-                  Plataforma de curso focado em ensinar Metodologias ágeis ao
-                  usuário, tendo como principal foco o Scrum.
-                </p>
-                <div class="info-list">
-                  <div class="info-row">
-                    <span class="label">Cliente:</span>
+                <p class="project-type">Plataforma Web</p>
+                <div class="description-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="file-text"></i>Descrição
+                    do projeto
+                  </h4>
+                  <p class="project-desc">
+                    Plataforma de curso focado em ensinar Metodologias ágeis ao
+                    usuário, tendo como principal foco o Scrum.
+                  </p>
+                </div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="user-round"></i>
+                    <span class="label">Cliente</span>
                     <span class="value">Projeto acadêmico</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Duração do projeto:</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="calendar-days"></i>
+                    <span class="label">Duração do projeto</span>
                     <span class="value">6 meses</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Tecnologias:</span>
-                    <span class="value">HTML, CSS, JavaScript</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="briefcase-business"></i
+                    ><span class="label">Cargo</span
+                    ><span class="value" data-pending="true">A informar</span>
+                  </div>
+                </div>
+                <div class="stack-grid">
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="monitor"></i>Front-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">HTML</span
+                      ><span class="tech-tag">CSS</span
+                      ><span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="server"></i>Back-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="cloud"></i
+                      >Infraestrutura
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="links">
@@ -420,6 +638,16 @@
                     >Ver no GitHub</a
                   >
                 </div>
+                <div class="responsibilities-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="list-checks"></i
+                    >Atividades e responsabilidades
+                  </h4>
+                  <p data-pending="true">
+                    Descreva aqui suas atividades e responsabilidades neste
+                    projeto.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -428,54 +656,101 @@
               <div class="project-left">
                 <div class="main-image-container">
                   <img
-                    src="img/nutritech_logo.jpeg"
-                    alt="Projeto NutriTech"
+                    alt="Imagem do projeto NutriTech"
                     class="main-image active"
                     loading="lazy"
+                    src="img/nutritech_logo.jpeg"
                   />
                 </div>
                 <div class="thumbnails">
                   <img
-                    src="img/nutritech_logo.jpeg"
                     alt="Thumb 1"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb active"
                     loading="lazy"
+                    role="button"
+                    src="img/nutritech_logo.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/nutri1.jpeg"
                     alt="Thumb 2"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/nutri1.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/nutri2.jpeg"
                     alt="Thumb 3"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/nutri2.jpeg"
+                    tabindex="0"
                   />
                 </div>
               </div>
               <div class="project-right">
                 <h3 class="project-title">NutriTech</h3>
-                <p class="project-subtitle">informações do projeto</p>
-                <p class="project-desc">
-                  Plataforma de controle nutricional e acompanhamento de dieta,
-                  e visualização de progresso físico.
-                </p>
-                <div class="info-list">
-                  <div class="info-row">
-                    <span class="label">Cliente:</span>
+                <p class="project-type">Aplicação Web</p>
+                <div class="description-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="file-text"></i>Descrição
+                    do projeto
+                  </h4>
+                  <p class="project-desc">
+                    Plataforma de controle nutricional e acompanhamento de
+                    dieta, e visualização de progresso físico.
+                  </p>
+                </div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="user-round"></i>
+                    <span class="label">Cliente</span>
                     <span class="value">Projeto acadêmico</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Duração do projeto:</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="calendar-days"></i>
+                    <span class="label">Duração do projeto</span>
                     <span class="value">6 meses</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Tecnologias:</span>
-                    <span class="value"
-                      >React, TypeScript, SQL, PostgreSQL</span
-                    >
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="briefcase-business"></i
+                    ><span class="label">Cargo</span
+                    ><span class="value" data-pending="true">A informar</span>
+                  </div>
+                </div>
+                <div class="stack-grid">
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="monitor"></i>Front-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">React</span
+                      ><span class="tech-tag">TypeScript</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="server"></i>Back-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">SQL</span
+                      ><span class="tech-tag">PostgreSQL</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="cloud"></i
+                      >Infraestrutura
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="links">
@@ -485,6 +760,16 @@
                     >Ver no GitHub</a
                   >
                 </div>
+                <div class="responsibilities-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="list-checks"></i
+                    >Atividades e responsabilidades
+                  </h4>
+                  <p data-pending="true">
+                    Descreva aqui suas atividades e responsabilidades neste
+                    projeto.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -493,60 +778,112 @@
               <div class="project-left">
                 <div class="main-image-container">
                   <img
-                    src="img/cloud_logo.jpeg"
-                    alt="Projeto CloudIo"
+                    alt="Imagem do projeto Cloud.Io"
                     class="main-image active"
                     loading="lazy"
+                    src="img/cloud_logo.jpeg"
                   />
                 </div>
                 <div class="thumbnails">
                   <img
-                    src="img/cloud_logo.jpeg"
                     alt="Thumb 1"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb active"
                     loading="lazy"
+                    role="button"
+                    src="img/cloud_logo.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/cloud1.jpeg"
                     alt="Thumb 2"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/cloud1.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/cloud2.jpeg"
                     alt="Thumb 3"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/cloud2.jpeg"
+                    tabindex="0"
                   />
                   <img
-                    src="img/cloud3.jpeg"
                     alt="Thumb 4"
+                    aria-label="Visualizar imagem do projeto"
                     class="thumb"
                     loading="lazy"
+                    role="button"
+                    src="img/cloud3.jpeg"
+                    tabindex="0"
                   />
                 </div>
               </div>
               <div class="project-right">
                 <h3 class="project-title">Cloud.Io</h3>
-                <p class="project-subtitle">informações do projeto</p>
-                <p class="project-desc">
-                  Plataforma de levantamento e monitoramento climático, dos
-                  ventos e altura das ondas na região do lado de Furnas.
-                </p>
-                <div class="info-list">
-                  <div class="info-row">
-                    <span class="label">Cliente:</span>
+                <p class="project-type">Aplicação Web</p>
+                <div class="description-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="file-text"></i>Descrição
+                    do projeto
+                  </h4>
+                  <p class="project-desc">
+                    Plataforma de levantamento e monitoramento climático, dos
+                    ventos e altura das ondas na região do lado de Furnas.
+                  </p>
+                </div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="user-round"></i>
+                    <span class="label">Cliente</span>
                     <span class="value"
                       >CNPq - Universidade Federal de Itajubá</span
                     >
                   </div>
-                  <div class="info-row">
-                    <span class="label">Duração do projeto:</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="calendar-days"></i>
+                    <span class="label">Duração do projeto</span>
                     <span class="value">6 meses</span>
                   </div>
-                  <div class="info-row">
-                    <span class="label">Tecnologias:</span>
-                    <span class="value">React, TypeScript, MongoDB, API.</span>
+                  <div class="meta-item">
+                    <i aria-hidden="true" data-lucide="briefcase-business"></i
+                    ><span class="label">Cargo</span
+                    ><span class="value" data-pending="true">A informar</span>
+                  </div>
+                </div>
+                <div class="stack-grid">
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="monitor"></i>Front-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">React</span
+                      ><span class="tech-tag">TypeScript</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="server"></i>Back-end
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">MongoDB</span
+                      ><span class="tech-tag">API</span>
+                    </div>
+                  </div>
+                  <div class="stack-panel">
+                    <h4>
+                      <i aria-hidden="true" data-lucide="cloud"></i
+                      >Infraestrutura
+                    </h4>
+                    <div class="tech-tags">
+                      <span class="tech-empty" data-pending="true"
+                        >A informar</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="links">
@@ -556,13 +893,19 @@
                     >Ver no GitHub</a
                   >
                 </div>
+                <div class="responsibilities-panel">
+                  <h4>
+                    <i aria-hidden="true" data-lucide="list-checks"></i
+                    >Atividades e responsabilidades
+                  </h4>
+                  <p data-pending="true">
+                    Descreva aqui suas atividades e responsabilidades neste
+                    projeto.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="carousel-controls">
-          <button id="prev">&#10094;</button>
-          <button id="next">&#10095;</button>
         </div>
       </section>
       <!-- fim sessão projetos -->
@@ -570,58 +913,200 @@
       <section class="habilidades" id="habilidades">
         <h2><span class="green-dot">•</span> Habilidades</h2>
         <div class="skills-container">
-          <div class="skills-icons" aria-label="Principais tecnologias e competências">
+          <div
+            aria-label="Principais tecnologias e competências"
+            class="skills-icons"
+          >
             <div class="skills-group">
               <h3 class="skills-group-title">Análise e qualidade</h3>
-              <span class="skill-tag"><i data-lucide="clipboard-list"></i> Análise de requisitos</span>
-              <span class="skill-tag"><i data-lucide="workflow"></i> Mapeamento de processos</span>
-              <span class="skill-tag"><i data-lucide="list-checks"></i> Backlog e histórias de usuário</span>
-              <span class="skill-tag"><i data-lucide="test-tube-2"></i> Testes funcionais</span>
-              <span class="skill-tag"><i data-lucide="file-check-2"></i> Documentação</span>
+              <span
+                class="skill-tag"
+                style="background-color: #007bff; color: white"
+                ><i data-lucide="clipboard-list"></i> Análise de
+                requisitos</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #30485c; color: white"
+                ><i data-lucide="workflow"></i> Mapeamento de processos</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #292929; color: white"
+                ><i data-lucide="list-checks"></i> Backlog e histórias de
+                usuário</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #28a745; color: white"
+                ><i data-lucide="test-tube-2"></i> Testes funcionais</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #cf9c03; color: white"
+                ><i data-lucide="file-check-2"></i> Documentação</span
+              >
             </div>
             <div class="skills-group">
               <h3 class="skills-group-title">Desenvolvimento web</h3>
-              <span class="skill-tag"><i data-lucide="code-2"></i> HTML</span>
-              <span class="skill-tag"><i data-lucide="palette"></i> CSS</span>
-              <span class="skill-tag"><i data-lucide="file-code"></i> JavaScript</span>
-              <span class="skill-tag"><i data-lucide="atom"></i> React</span>
-              <span class="skill-tag"><i data-lucide="file-code-2"></i> TypeScript</span>
-              <span class="skill-tag"><i data-lucide="server"></i> Node.js</span>
-              <span class="skill-tag"><i data-lucide="code"></i> PHP</span>
-              <span class="skill-tag"><i data-lucide="terminal"></i> Python</span>
+              <span
+                class="skill-tag"
+                style="background-color: #ff5100; color: white"
+                ><i data-lucide="code-xml"></i> HTML</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #0077ff; color: white"
+                ><i data-lucide="palette"></i> CSS</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #cf9c03; color: white"
+                ><i data-lucide="file-code"></i> JavaScript</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #0352c9; color: white"
+                ><i data-lucide="atom"></i> React</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #003aa7; color: white"
+                ><i data-lucide="file-code-2"></i> TypeScript</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #28a745; color: white"
+                ><i data-lucide="server"></i> Node.js</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #5528a7; color: white"
+                ><i data-lucide="code"></i> PHP</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #292929; color: white"
+                ><i data-lucide="terminal"></i> Python</span
+              >
             </div>
             <div class="skills-group">
               <h3 class="skills-group-title">Desenvolvimento mobile</h3>
-              <span class="skill-tag"><i data-lucide="atom"></i> React Native</span>
-              <span class="skill-tag"><i data-lucide="tablet-smartphone"></i> Expo</span>
-              <span class="skill-tag"><i data-lucide="file-code"></i> Flutter</span>
-              <span class="skill-tag"><i data-lucide="code"></i> Dart</span>
+              <span
+                class="skill-tag"
+                style="background-color: #007bff; color: white"
+                ><i data-lucide="atom"></i> React Native</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #12afd6; color: white"
+                ><i data-lucide="tablet-smartphone"></i> Expo</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #003aa7; color: white"
+                ><i data-lucide="file-code"></i> Flutter</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #5528a7; color: white"
+                ><i data-lucide="code"></i> Dart</span
+              >
             </div>
             <div class="skills-group">
               <h3 class="skills-group-title">Dados e integração</h3>
-              <span class="skill-tag"><i data-lucide="database"></i> MySQL</span>
-              <span class="skill-tag"><i data-lucide="database"></i> PostgreSQL</span>
-              <span class="skill-tag"><i data-lucide="database"></i> MongoDB</span>
-              <span class="skill-tag"><i data-lucide="plug"></i> APIs REST</span>
+              <span
+                class="skill-tag"
+                style="background-color: #007bff; color: white"
+                ><i data-lucide="database"></i> MySQL</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #30485c; color: white"
+                ><i data-lucide="database"></i> PostgreSQL</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #28a745; color: white"
+                ><i data-lucide="database"></i> MongoDB</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #292929; color: white"
+                ><i data-lucide="plug"></i> APIs REST</span
+              >
             </div>
             <div class="skills-group">
               <h3 class="skills-group-title">IA e DevOps</h3>
-              <span class="skill-tag"><i data-lucide="brain-circuit"></i> Inteligência Artificial</span>
-              <span class="skill-tag"><i data-lucide="messages-square"></i> Chatbots</span>
-              <span class="skill-tag"><i data-lucide="languages"></i> PLN</span>
-              <span class="skill-tag"><i data-lucide="container"></i> Docker</span>
-              <span class="skill-tag"><i data-lucide="git-branch"></i> CI/CD</span>
-              <span class="skill-tag"><i data-lucide="workflow"></i> GitHub Actions</span>
-              <span class="skill-tag"><i data-lucide="git-fork"></i> Workflow</span>
+              <span
+                class="skill-tag"
+                style="background-color: #007bff; color: white"
+                ><i data-lucide="brain-circuit"></i> Inteligência
+                Artificial</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #30485c; color: white"
+                ><i data-lucide="messages-square"></i> Chatbots</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #292929; color: white"
+                ><i data-lucide="languages"></i> PLN</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #003aa7; color: white"
+                ><i data-lucide="container"></i> Docker</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #cf9c03; color: white"
+                ><i data-lucide="git-branch"></i> CI/CD</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #28a745; color: white"
+                ><i data-lucide="workflow"></i> GitHub Actions</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #5528a7; color: white"
+                ><i data-lucide="git-fork"></i> Workflow</span
+              >
             </div>
             <div class="skills-group">
               <h3 class="skills-group-title">Ferramentas e métodos</h3>
-              <span class="skill-tag"><i data-lucide="git-commit"></i> Git</span>
-              <span class="skill-tag"><i data-lucide="folder-git-2"></i> GitHub</span>
-              <span class="skill-tag"><i data-lucide="kanban"></i> Scrum</span>
-              <span class="skill-tag"><i data-lucide="columns-3"></i> Kanban</span>
-              <span class="skill-tag"><i data-lucide="pen-tool"></i> Figma</span>
-              <span class="skill-tag"><i data-lucide="monitor-cog"></i> Suporte técnico</span>
+              <span
+                class="skill-tag"
+                style="background-color: #007bff; color: white"
+                ><i data-lucide="git-commit"></i> Git</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #30485c; color: white"
+                ><i data-lucide="folder-git-2"></i> GitHub</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #292929; color: white"
+                ><i data-lucide="kanban"></i> Scrum</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #28a745; color: white"
+                ><i data-lucide="columns-3"></i> Kanban</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #5528a7; color: white"
+                ><i data-lucide="pen-tool"></i> Figma</span
+              >
+              <span
+                class="skill-tag"
+                style="background-color: #12afd6; color: white"
+                ><i data-lucide="monitor-cog"></i> Suporte técnico</span
+              >
             </div>
           </div>
         </div>
@@ -655,14 +1140,7 @@
       </button>
     </footer>
     <!-- fim do site -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (window.lucide) window.lucide.createIcons();
-      });
-    </script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/language.js"></script>
   </body>
