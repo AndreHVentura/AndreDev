@@ -93,4 +93,26 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
   icons();
+
+  document.querySelectorAll(".read-more-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const wrapper = button.parentElement;
+
+      const content = wrapper.querySelector(".expandable-content");
+
+      const isExpanded = content.classList.toggle("expanded");
+
+      button.setAttribute("aria-expanded", String(isExpanded));
+
+      const isEnglish = document.documentElement.lang === "en";
+
+      button.firstChild.textContent = isExpanded
+        ? isEnglish
+          ? "Show less "
+          : "Ler menos "
+        : isEnglish
+          ? "Read more "
+          : "Ler mais ";
+    });
+  });
 });

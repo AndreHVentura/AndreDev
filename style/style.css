@@ -580,6 +580,8 @@ footer {
 }
 #scrollToTop {
   position: fixed;
+  justify-content: center;
+  align-items: center;
   right: 25px;
   bottom: 25px;
   border: 1px solid var(--border);
@@ -817,4 +819,50 @@ footer {
   .stack-grid .stack-panel:nth-child(3) {
     grid-column: auto;
   }
+}
+
+.expandable-content {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.activities-wrapper .expandable-content {
+  max-height: 110px;
+}
+
+.expandable-content.expanded {
+  max-height: 2000px;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 10px;
+  padding: 5px 0;
+
+  background: transparent;
+  border: none;
+
+  color: var(--accent-color, #00b894);
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+.read-more-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
