@@ -779,6 +779,29 @@ footer {
 .stack-grid .stack-panel:nth-child(3) {
   grid-column: 1/-1;
 }
+
+.stack-grid-four {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stack-grid-four > .stack-panel {
+  grid-column: auto;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .stack-grid-four {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-grid-four > .stack-panel {
+    grid-column: 1 / -1;
+  }
+}
+
 .stack-panel,
 .responsibilities-panel {
   background: var(--surface-alt);
@@ -987,4 +1010,90 @@ footer {
 
 :root:not([data-theme="dark"]) .tag-metodologias {
   --tag-color: #168000;
+}
+
+/* GALERIA MOBILE */
+
+.project-card.project-mobile .project-left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  height: auto;
+  padding: 20px;
+}
+
+/* Imagem principal e miniaturas lado a lado */
+
+.project-mobile .mobile-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Imagem principal reduzida */
+
+.project-mobile .main-image-container {
+  flex: 0 1 260px;
+  width: 260px;
+  max-width: calc(100% - 90px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: hidden;
+
+  border-radius: 12px;
+}
+
+/* Preservar a proporção original */
+
+.project-mobile .main-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: top;
+}
+
+/* Miniaturas na vertical */
+
+.project-mobile .thumbnails {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 76px;
+  width: 76px;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada miniatura */
+
+.project-mobile .thumb {
+  display: block;
+  width: 100%;
+  height: 105px;
+  object-fit: contain;
+
+  border: 2px solid transparent;
+  border-radius: 9px;
+
+  cursor: pointer;
+  transition: 
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-mobile .thumb:hover {
+  transform: scale(1.03);
+}
+
+.project-mobile .thumb.active {
+  border-color: #00ffca;
 }
